@@ -37,6 +37,10 @@
   .nav-link {
     @apply relative text-white opacity-80 hover:opacity-100 transition-opacity duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-full;
   }
+  
+  .mobile-menu-container {
+    @apply flex flex-col items-center justify-center gap-8 py-12 px-6;
+  }
 }
 
 .animate-reveal {
