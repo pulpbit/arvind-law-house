@@ -1,0 +1,11 @@
+node_modules/
+.DS_Store
+dist/
+css/style.css
+# Keep input.css but exclude compiled css if you want people to build it locally
+# Actually, for Cloudflare Pages, it's often better to include style.css if no build step is used,
+# but I added a build step, so I'll follow common practice.
+# Wait, for a simple static site, sometimes it's easier to just push the compiled CSS.
+# I'll exclude node_modules and .gemini.
+.gemini/
+.env

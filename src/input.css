@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0B1F3A;
+  --color-secondary: #1C2F4A;
+  --color-accent: #C9A55C;
+  --color-bg-light: #F8F9FB;
+  --color-text-main: #1B1B1B;
+  
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-body text-text-main bg-bg-light antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block px-8 py-3 bg-accent text-white font-semibold rounded-sm transition-all duration-300 hover:bg-accent/90 hover:shadow-lg active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply inline-block px-8 py-3 border-2 border-accent text-accent font-semibold rounded-sm transition-all duration-300 hover:bg-accent hover:text-white active:scale-95;
+  }
+  
+  .nav-link {
+    @apply relative text-white opacity-80 hover:opacity-100 transition-opacity duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-full;
+  }
+}
+
+.animate-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
